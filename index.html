@@ -54,7 +54,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/linux/">Linux</a></li>
 	        
 			</ul>
 		</nav>
@@ -134,7 +134,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/linux/">Linux</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,6 +150,131 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-FLoat" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/FLoat/">hi</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/20/FLoat/" class="archive-article-date">
+  	<time datetime="2017-03-20T07:20:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/20/FLoat/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-linux-remote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/20/linux-remote/">远程控制LINUX</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/20/linux-remote/" class="archive-article-date">
+  	<time datetime="2017-03-20T07:00:15.801Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> [toc]</p>
+<h1 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h1><p> 要想远程连接到LINUX终端，我们这里使用XSHELL软件和SSH协议。在互联网中，终端与终端之间的交互都必须通过协议进行的，就像我们使用浏览器上网，使用的是HTTP协议或HHTPS协议。那么远程控制也是终端交互的一种，也是需要使用协议来进行的。一般来说，常见的远程协议有：TELNET和SSH两种，后者在安全性上比前者高很多，这里主要说说SSH.</p>
+<h2 id="1-1-软件"><a href="#1-1-软件" class="headerlink" title="1.1 软件"></a>1.1 软件</h2><p> <font color="red">Xshell</font>，一个终端模拟软件，支持SSH1，SSH2以及Windows下的TELNET协议。</p>
+<h2 id="1-2-SSH"><a href="#1-2-SSH" class="headerlink" title="1.2 SSH"></a>1.2 SSH</h2><p> SSH(Secure Shell),维基百科定义如下：</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="external">Secure Shell</a>  is a cryptographic network protocol for operating network services securely over an unsecured network</p>
+</blockquote>
+<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h1><p>想要远程接入linux，需要确保三点：<br> 1.SSH服务已经安装<br> 2.SSH服务已经打开<br> 3.关闭linux防火墙</p>
+<h2 id="2-1-安装SSH"><a href="#2-1-安装SSH" class="headerlink" title="2.1 安装SSH"></a>2.1 安装SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum -y install openssh-server openssh-clients</div></pre></td></tr></table></figure>
+<h2 id="2-2-开启SSH服务"><a href="#2-2-开启SSH服务" class="headerlink" title="2.2 开启SSH服务"></a>2.2 开启SSH服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service sshd start</div></pre></td></tr></table></figure>
+<h2 id="2-3-关闭防火墙"><a href="#2-3-关闭防火墙" class="headerlink" title="2.3 关闭防火墙"></a>2.3 关闭防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl <span class="built_in">disable</span> firewalld.service</div></pre></td></tr></table></figure>
+<p>使用SS来查看是否成功启用，出现端口号为22的服务既成功开启SSH。</p>
+<p>然后确定IP，在Xshell中进行如下操作：<br> <img src="img/859578968.png" alt=""></p>
+<p>输入用户名和密码即课可以成功登陆:<br> <img src="img/860009171.png" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">/linux/</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/20/linux-remote/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -299,6 +424,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">/linux/</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
