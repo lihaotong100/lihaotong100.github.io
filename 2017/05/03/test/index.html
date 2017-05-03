@@ -20,7 +20,7 @@ CPU，全称Centra">
 CPU，全称Centra">
 <meta property="og:image" content="http://yoursite.com/img/os.png">
 <meta property="og:image" content="http://yoursite.com/img/os2.png">
-<meta property="og:updated_time" content="2017-05-03T08:54:02.765Z">
+<meta property="og:updated_time" content="2017-05-03T08:56:49.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="1.计算机与操作系统1.1计算机的组成 我们知道无论是Windows还是Linux他们都是操作系统中的一员，而操作系统是协调与控制计算机硬件工作的程序，那么他需要控制哪些硬件进行相互工作，或者说计算机是由哪些硬件组成的？计算机的硬件组成主要分为五个部分：1.控制器：协调控制各个部件的运行2.运算器：实现算数运算和逻辑运算3.存储器：存放数据与程序4.输入设备5.输出设备
@@ -186,7 +186,8 @@ CPU，全称Centra">
 <blockquote>
 <p>CPU，全称Central Processing Unit，由控制器与运算器组成。存储器则由内存与硬盘组成（最小存储单元为1B）。而输入与输出设备则是我们常见的键盘鼠标和显示器。</p>
 </blockquote>
-<h2 id="1-2-操作系统"><a href="#1-2-操作系统" class="headerlink" title="1.2 操作系统"></a>1.2 操作系统</h2><h3 id="1-2-1-基本概念"><a href="#1-2-1-基本概念" class="headerlink" title="1.2.1 基本概念"></a>1.2.1 基本概念</h3><p> <img src="img/os.png" alt=""><br> 从图中可以看出，操作系统是计算机硬件与应用之间的桥梁。那么什么是<a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank" rel="external">操作系统</a>，或者说他由什么组成？我们来看看维基里面的定义：<br> <strong> An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.</strong><br> 从上面的定义可以看出，操作系统是一个用于管理计算机硬件和软件资源的一个系统<font color="red">软件</font>，并且为计算机程序提供了一些通用的服务。这个系统软件我们把叫做kernel，其他的服务叫做service。所以一个操作系统就是由kernel+applicaiton组成的，如下图所示（linux的结构图）。<br> <img src="img/os2.png" alt=""></p>
+<h2 id="1-2-操作系统"><a href="#1-2-操作系统" class="headerlink" title="1.2 操作系统"></a>1.2 操作系统</h2><h3 id="1-2-1-基本概念"><a href="#1-2-1-基本概念" class="headerlink" title="1.2.1 基本概念"></a>1.2.1 基本概念</h3> <div style="text-align:center"><img src="img/os.png" alt=""></div><br> 从图中可以看出，操作系统是计算机硬件与应用之间的桥梁。那么什么是<a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank" rel="external">操作系统</a>，或者说他由什么组成？我们来看看维基里面的定义：<br> <strong> An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.</strong><br> 从上面的定义可以看出，操作系统是一个用于管理计算机硬件和软件资源的一个系统<font color="red">软件</font>，并且为计算机程序提供了一些通用的服务。这个系统软件我们把叫做kernel，其他的服务叫做service。所以一个操作系统就是由kernel+applicaiton组成的，如下图所示（linux的结构图）。<br> <div style="text-align:center"><img src="img/os2.png" alt=""></div>
+
 <h3 id="1-2-2-接口类型"><a href="#1-2-2-接口类型" class="headerlink" title="1.2.2 接口类型"></a>1.2.2 接口类型</h3><p>操作系统的目的就是为了能够方便的让用户与计算机底层硬件进行交换。既然要进行交互，那么就必须有接口。一个操作系统的接口有两类：GUI和CLI。<br>其中GUI，全称为Graphic User Interface，为图形界面系统，在linux中常见的有GNome和KDE。而CLI，全称为Command Line Interface，为命令行接口，在Linux中常见的有bash,csh,sh。</p>
 <h3 id="2-2-3-功能"><a href="#2-2-3-功能" class="headerlink" title="2.2.3 功能"></a>2.2.3 功能</h3><p>一个操作系统提供的功能种类大概分为三类：<br>1.驱动程序（device drive）：所有硬件设备都需要相应的程序来驱动，这个程序就叫做驱动程序。<br>2.内存管理<br>3.系统调用（system call，一部分整合为库文件）</p>
 <h1 id="2-Linux"><a href="#2-Linux" class="headerlink" title="2.Linux"></a>2.Linux</h1><p>Linux，作为操作系统的一员，具有操作系统的所有基本属性。但是，与Windows不同的是，Linux作为开源软件（GNU），遵守开源软件的思想：<br>1.自由使用<br>2.自由学习和修改<br>3.自由分发<br>4.自由创建衍生版<br>正因为如此，目前市面上有许许多多的不同版本的Linux，其中，主流的有如下几个：<br>1.Debian：Ubuntu和Knopix<br>2.Slackware：S.U.S.E和OpenSUSE<br>3.RedHat：Centos和Fedora</p>
