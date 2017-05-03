@@ -158,7 +158,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/03/test/">远程控制LINUX</a>
+      <a class="article-title" href="/2017/05/03/test/">初识Linux</a>
     </h1>
   
 
@@ -171,20 +171,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> [toc]</p>
-<h1 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h1><p> 要想远程连接到LINUX终端，我们这里使用XSHELL软件和SSH协议。在互联网中，终端与终端之间的交互都必须通过协议进行的，就像我们使用浏览器上网，使用的是HTTP协议或HHTPS协议。那么远程控制也是终端交互的一种，也是需要使用协议来进行的。一般来说，常见的远程协议有：TELNET和SSH两种，后者在安全性上比前者高很多，这里主要说说SSH.</p>
-<h2 id="1-1-软件"><a href="#1-1-软件" class="headerlink" title="1.1 软件"></a>1.1 软件</h2><p> <font color="red">Xshell</font>，一个终端模拟软件，支持SSH1，SSH2以及Windows下的TELNET协议。</p>
-<h2 id="1-2-SSH"><a href="#1-2-SSH" class="headerlink" title="1.2 SSH"></a>1.2 SSH</h2><p> SSH(Secure Shell),维基百科定义如下：</p>
+        <h1 id="1-计算机与操作系统"><a href="#1-计算机与操作系统" class="headerlink" title="1.计算机与操作系统"></a>1.计算机与操作系统</h1><h2 id="1-1计算机的组成"><a href="#1-1计算机的组成" class="headerlink" title="1.1计算机的组成"></a>1.1计算机的组成</h2><p> 我们知道无论是Windows还是Linux他们都是操作系统中的一员，而操作系统是协调与控制计算机硬件工作的程序，那么他需要控制哪些硬件进行相互工作，或者说计算机是由哪些硬件组成的？<br>计算机的硬件组成主要分为五个部分：<br>1.控制器：协调控制各个部件的运行<br>2.运算器：实现算数运算和逻辑运算<br>3.存储器：存放数据与程序<br>4.输入设备<br>5.输出设备</p>
 <blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="external">Secure Shell</a>  is a cryptographic network protocol for operating network services securely over an unsecured network</p>
+<p>CPU，全称Central Processing Unit，由控制器与运算器组成。存储器则由内存与硬盘组成（最小存储单元为1B）。而输入与输出设备则是我们常见的键盘鼠标和显示器。</p>
 </blockquote>
-<h1 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h1><p>想要远程接入linux，需要确保三点：<br> 1.SSH服务已经安装<br> 2.SSH服务已经打开<br> 3.关闭linux防火墙</p>
-<h2 id="2-1-安装SSH"><a href="#2-1-安装SSH" class="headerlink" title="2.1 安装SSH"></a>2.1 安装SSH</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yum -y install openssh-server openssh-clients</div></pre></td></tr></table></figure>
-<h2 id="2-2-开启SSH服务"><a href="#2-2-开启SSH服务" class="headerlink" title="2.2 开启SSH服务"></a>2.2 开启SSH服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ service sshd start</div></pre></td></tr></table></figure>
-<h2 id="2-3-关闭防火墙"><a href="#2-3-关闭防火墙" class="headerlink" title="2.3 关闭防火墙"></a>2.3 关闭防火墙</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl <span class="built_in">disable</span> firewalld.service</div></pre></td></tr></table></figure>
-<p>使用SS来查看是否成功启用，出现端口号为22的服务既成功开启SSH。</p>
-<p>然后确定IP，在Xshell中进行如下操作：<br> <img src="img/859578968.png" alt=""></p>
-<p>输入用户名和密码即可以成功登陆:<br> <img src="img/860009171.png" alt=""></p>
+<h2 id="1-2-操作系统"><a href="#1-2-操作系统" class="headerlink" title="1.2 操作系统"></a>1.2 操作系统</h2><h3 id="1-2-1-基本概念"><a href="#1-2-1-基本概念" class="headerlink" title="1.2.1 基本概念"></a>1.2.1 基本概念</h3><p> <img src="0.9349153019492529.png" alt=""><br> 从图中可以看出，操作系统是计算机硬件与应用之间的桥梁。那么什么是<a href="https://en.wikipedia.org/wiki/Operating_system" target="_blank" rel="external">操作系统</a>，或者说他由什么组成？我们来看看维基里面的定义：<br> <strong> An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs.</strong><br> 从上面的定义可以看出，操作系统是一个用于管理计算机硬件和软件资源的一个系统<font color="red">软件</font>，并且为计算机程序提供了一些通用的服务。这个系统软件我们把叫做kernel，其他的服务叫做service。所以一个操作系统就是由kernel+applicaiton组成的，如下图所示（linux的结构图）。<br> <img src="0.7426627177113088.png" alt=""></p>
+<h3 id="1-2-2-接口类型"><a href="#1-2-2-接口类型" class="headerlink" title="1.2.2 接口类型"></a>1.2.2 接口类型</h3><p>操作系统的目的就是为了能够方便的让用户与计算机底层硬件进行交换。既然要进行交互，那么就必须有接口。一个操作系统的接口有两类：GUI和CLI。<br>其中GUI，全称为Graphic User Interface，为图形界面系统，在linux中常见的有GNome和KDE。而CLI，全称为Command Line Interface，为命令行接口，在Linux中常见的有bash,csh,sh。</p>
+<h3 id="2-2-3-功能"><a href="#2-2-3-功能" class="headerlink" title="2.2.3 功能"></a>2.2.3 功能</h3><p>一个操作系统提供的功能种类大概分为三类：<br>1.驱动程序（device drive）：所有硬件设备都需要相应的程序来驱动，这个程序就叫做驱动程序。<br>2.内存管理<br>3.系统调用（system call，一部分整合为库文件）</p>
+<h1 id="2-Linux"><a href="#2-Linux" class="headerlink" title="2.Linux"></a>2.Linux</h1><p>Linux，作为操作系统的一员，具有操作系统的所有基本属性。但是，与Windows不同的是，Linux作为开源软件（GNU），遵守开源软件的思想：<br>1.自由使用<br>2.自由学习和修改<br>3.自由分发<br>4.自由创建衍生版<br>正因为如此，目前市面上有许许多多的不同版本的Linux，其中，主流的有如下几个：<br>1.Debian：Ubuntu和Knopix<br>2.Slackware：S.U.S.E和OpenSUSE<br>3.RedHat：Centos和Fedora</p>
+<h2 id="2-1Linux的哲学思想"><a href="#2-1Linux的哲学思想" class="headerlink" title="2.1Linux的哲学思想"></a>2.1Linux的哲学思想</h2><p>1.一切皆文件<br>2.单一目的的小程序<br>3.组合小程序完成辅助任务<br>4.文本文件保存配置信息<br>5.尽量不与用户交互<br>6.提供机制而非策略</p>
 
       
 
